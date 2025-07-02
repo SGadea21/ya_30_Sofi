@@ -1,0 +1,11 @@
+[phases.setup]
+nixPkgs = ['maven', 'openjdk17']
+
+[phases.build]
+cmds = ['mvn clean package -DskipTests']
+
+[phases.start]
+cmd = 'java -jar target/fiesta-retro-backend-*.jar'
+
+[variables]
+MAVEN_OPTS = '-Xmx1024m'
